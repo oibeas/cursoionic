@@ -1,0 +1,86 @@
+<!-- Hacer una web que que permita introducir una edad al usuario y que le informe de si es mayor o menor de edad -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LetraDNI</title>
+
+    <script>
+        function calcularLetra() {
+            //recoger el valor de la caja de texto, el numero de dni
+            let cajaDni = document.getElementById("dni")
+            console.log(cajaDni.value);
+
+            let numeroDni = cajaDni.value //Introduzco el valor en una variable
+
+            let dniEsp = document.getElementById("esp").checked;
+            console.log(dniEsp);
+
+            //Hacer la division entre 23 y calcular el resto
+            let resto = numeroDni % 23
+            console.log(resto)
+            let letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"]
+
+            let letra = "";
+            letra = letras[resto];
+            console.log(letra);
+
+            if (dniEsp == true) { //Comprueba si esta marcado com español
+
+                // crea un nuevo div 
+                // y añade contenido 
+                var newDiv = document.createElement("div");
+                var newContent = document.createTextNode("Tu DNI español es: " + numeroDni + "-" + letra);
+
+            } else {
+
+
+                let restoExt = numeroDni % 3
+                let letrasExt = ["X", "Y", "Z"]
+                let letraExt = letrasExt[restoExt]
+                console.log(letraExt);
+                // crea un nuevo div 
+                // y añade contenido 
+                var newDiv = document.createElement("div");
+                var newContent = document.createTextNode("Tu NIE extranjero es: " + letraExt + numeroDni + "-" + letra);
+            }
+
+
+            newDiv.appendChild(newContent); //añade texto al div creado. 
+
+            // añade el elemento creado y su contenido al DOM 
+            var currentDiv = document.getElementById("div1");
+            document.body.insertBefore(newDiv, currentDiv);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h1>LETRA DNI</h1>
+    <hr>
+
+    <label for="dni">Introduzca tu numero de DNI</label>
+    <input id="dni" type="number">
+    <div>
+        <input type="radio" id="esp" name="drone" value="esp" checked>
+        <label for="esp">Español</label>
+    </div>
+
+    <div>
+        <input type="radio" id="ext" name="drone" value="ext">
+        <label for="ext">Extranjero</label>
+    </div>
+    <input type="button" value="CALCULAR" onclick="calcularLetra()">
+
+
+
+</body>
+
+
+
+</html>
