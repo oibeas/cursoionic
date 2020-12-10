@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    margin: 0 auto;
+    width: 700px;
+}
+
+.titulo {
+    margin: 0 auto;
+    background-color: rgb(74, 143, 207);
+    color: white;
+    padding: 10px;
+    width: 500px;
+}
+
+.vidas {
+    padding: 10px;
+    background-color: rgb(226, 132, 33);
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.respuesta {
+    display: flex;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    padding: 10px;
+    width: 680px;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    align-items: center;
+}
+
+#respuesta {
+    font-size: 1.5rem;
+    width: 50px;
+    justify-content: center;
+}
+
+.boton {
+    font-size: 1.5rem;
+    width: 150px;
+}
+
+.imagen {
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+img {
+    max-width: 400px;
+    max-height: 400px;
+}
