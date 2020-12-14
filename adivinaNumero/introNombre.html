@@ -1,0 +1,60 @@
+<!-- Esta es la oagina inicial donde metemos el nombre, pero si ya he metido un nombre alguna vez, tengo que ir directamente a la pagina 2 -->
+<!-- Hacer una nueva opcion en la pagina 2 que me permita volver la pagina 1 y modificar el nombre -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducir nombre</title>
+
+    <script>
+        // Previo: comprobar si ya existe un nombre de usuario 
+        function comprobarUsuario() {
+            let usuario = localStorage.getItem('usuarioGuardado');
+            let usuarioMod = localStorage.getItem('modificarUsuario')
+            console.log(usuario);
+            console.log(usuarioMod);
+
+            if (usuario != null && usuarioMod == "false") {
+                console.log("Ya existe el usuario");
+                window.location.href = "adivinaNumero.html"
+            }
+        }
+
+        comprobarUsuario();
+
+
+        // 1º Introducir nombre
+        // 2º guardarlo en localstorage
+        function guardarUsuario() {
+            let elemento_usuario = document.getElementById("user");
+            console.log(elemento_usuario.value);
+            if (elemento_usuario.value == "") {
+                window.alert("No puedes dejar el usuario vacion")
+            } else {
+                localStorage.setItem('usuarioGuardado', elemento_usuario.value)
+                window.location.href = "adivinaNumero.html"
+            }
+        }
+
+
+
+        // 3º poder cambiar el nombre
+    </script>
+</head>
+
+<body>
+
+    <div class="tituloUsuario">
+        <label for="user">Introduzca nombre de usuario:&nbsp;</label>
+        <input name="user" id="user" type="string">&nbsp;
+        <input type="button" class="boton" value="GUARDAR" onclick="guardarUsuario()">
+    </div>
+
+
+
+</body>
+
+</html>
