@@ -38,6 +38,20 @@
             document.querySelector("#modificar").style.visibility = "visible";
         }
 
+
+        class Partida { //Creamos una clase Partida, con los datos de nombre y numero de intentos
+            constructor(nombre, vidas) {
+                this.nombre = nombre;
+                this.vidas = vidas;
+            }
+
+            mostrarPartida() {
+                console.log("El usuario que ha jugado es: " + this.nombre);
+                let intentos = 5 - this.vidas;
+                console.log("El numero de intentos ha sido: " + intentos);
+            }
+        }
+
         function numeroRandom(min, max) { //Funcion que genera un numero aleatorio entre un numero minimo(incluido) y uno maximo) excluido
             return Math.floor(Math.random() * (max - min)) + min;
         }
@@ -93,6 +107,12 @@
             }
             records[records.length] = nuevoRecord;
             localStorage.setItem('recordsGuardados', JSON.stringify(records));
+
+            // console.log(usuario);
+            // console.log(vidas);
+            let partidaInfo = new Partida(usuario, vidas); //Primerp declaro el objeto Partida y le paso los parametros
+            partidaInfo.mostrarPartida(); //Ahora llamo al método mostrar partida, como no devuelve nada no hace falta meterle en una variable
+
 
             setTimeout(volverEmpezar, 5000);
         }
