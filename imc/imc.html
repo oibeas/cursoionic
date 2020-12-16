@@ -1,0 +1,107 @@
+<!-- /*
+ * TODO
+ * HACED UNA APLICACIÓN WEB QUE PERMITA INTRODUCIR AL USUARIO
+ * SU ESTATURA EN METROS Y SU PESO EN KG Y LE INFORME SU 
+ * INFORME DE SU ÍNDICE DE MASA CORPORAL (IMC) SEGÚN LA SIGUIENTE FÓRMULA
+ * 
+ * LA FÓRMULA DEL IMC = PESO / ESTATURA AL CUADRADO
+ *  * SI IMC < 16 ->> su imc es DESNUTRIDO
+ * SI IMC >= 16 Y < 18  ->> su imc es DELGADO
+ * SI IMC >= 18 Y < 25  ->> su imc es IDEAL
+ * SI IMC >= 25 Y < 31  ->> su imc es SOBREPESO
+ * SI IMC >= 31 ->> su imc es OBESO
+ ADEMÁS, DE DECIRLE SU IMC NUMÉRICO Y NOMINAL,
+ HABEÍS DE ACOMPAÑAR UNA IMAGEN EN LA PÁGINA
+ QUE DESCRIBA EL CORRESPONDIENTE IMC
+  */ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CALCULO IMC</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        function mostrarResultado(pImc, pResultadoImc, pImagen) { //Funcion para mostrar el resultado en texto
+
+            let el_div = document.querySelector('div.resultado'); //Busca el div con el queryselector, si no lo encuentra devuelve null
+
+            //CREAR UN NUEVO ELEMENTO
+
+            if (!el_div) { //Compruebo si existe el div, y si no lo creo
+                el_div = document.createElement("div");
+                var etiqueta_body = document.getElementById("cuerpo");
+                etiqueta_body.appendChild(el_div);
+                etiqueta_body.appendChild(document.createElement('img')).src = imagen;
+            }
+            //Y AÑADIRLO AL HTML
+            el_div.innerHTML = "Tu valor de IMC es: " + pImc + " y tu tipo de IMC es : " + pResultadoImc
+        }
+
+
+
+        function mensajeImc(pImc) { //Funcion para calcular el tipo de IMC
+            let mensaje = ""
+            switch (pImc != 0) {
+                case pImc < 16:
+                    mensaje = "DESNUTRIDO";
+                    imagen = "https://pbs.twimg.com/media/EAvWpvLXYAUOOBJ?format=jpg"
+                    break;
+                case pImc >= 16 && pImc < 18:
+                    mensaje = "DELGADO";
+                    imagen = "https://previews.123rf.com/images/macrovector/macrovector1405/macrovector140500898/28799395-joven-delgado-medir-la-cintura-con-una-cinta-aisladas-sobre-fondo-blanco-ilustraci%C3%B3n-vectorial-mujer.jpg"
+                    break;
+                case pImc >= 18 && pImc < 25:
+                    mensaje = "IDEAL";
+                    imagen = "https://aprenderacomer.com/wp-content/uploads/2020/10/chica-delgada-ejercicio-300x170.png"
+                    break;
+                case pImc >= 25 && pImc < 31:
+                    mensaje = "SOBREPESO";
+                    imagen = "https://thumbs.dreamstime.com/z/icono-de-hombre-positivo-con-sobrepeso-estilo-caricatura-un-%C3%ADcono-vectorial-para-dise%C3%B1o-web-aislado-en-fondo-blanco-161388301.jpg"
+                    break;
+                case pImc > 31:
+                    mensaje = "OBESO";
+                    imagen = "https://i.pinimg.com/474x/c9/39/7c/c9397c8922d0453b3aca731b55e17c54.jpg"
+                    break;
+            }
+            console.log(mensaje);
+
+            //Redondear a 1 decimal
+            pImc = Math.round(pImc * 10) / 10
+
+            mostrarResultado(pImc, mensaje, imagen);
+
+        }
+
+        function calcularImc() { //Funcion para calcular el valor de IMC
+            let peso = document.getElementById("peso").value
+            let estatura = document.getElementById("estatura").value
+            console.log(peso);
+            console.log(estatura);
+            let imc = peso / Math.pow(estatura, 2)
+            console.log(imc);
+            mensajeImc(imc);
+
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="cuerpo">
+    <div class="marco">
+        <div class="titulo">CALCULO DE IMC</div>
+        <hr>
+        <label for="estatura">Introduzca su estatura: </label>
+        <input name="estatura" id="estatura" type="number">&nbsp;metros
+        <br>
+        <label for="peso">Introduzca su peso: </label>
+        <input name="peso" id="peso" type="number">&nbsp;kg
+        <br>
+        <input type="button" value="CALCULAR" onclick="calcularImc()">
+        <br>
+    </div>
+</body>
+
+</html>

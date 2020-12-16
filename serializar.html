@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serializar</title>
+
+    <script>
+        class Partida { //Creamos una clase Partida, con los datos de nombre y numero de intentos
+            constructor(nombre, vidas) {
+                this.nombre = nombre;
+                this.vidas = vidas;
+            }
+
+            mostrarPartida() { //Este es el metodo dinamico, que hay que declarar el objeto antes de poder usarlo
+                console.log("El usuario que ha jugado es: " + this.nombre);
+                let intentos = 5 - this.vidas;
+                console.log("El numero de intentos ha sido: " + intentos);
+            }
+
+
+        }
+
+        //Crearme un objeto de tipo Partida
+        let partida = new Partida("JESS", 5);
+        let string_partida = JSON.stringify(partida); //Convertimos el objeto a cadena de texto
+        console.log(string_partida);
+
+        let partida2 = JSON.parse(string_partida);
+        console.log(partida2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

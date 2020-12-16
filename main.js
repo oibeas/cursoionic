@@ -1,0 +1,1 @@
+window.alert('Hala Madrid, desde main');

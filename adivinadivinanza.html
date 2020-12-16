@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>
+        ADIVINA adivinanza
+    </title>
+    <!--
+     *
+     *El código de esta script, es un poco misterioso. Algún programador Clase "C", no ha usado
+     *nombres descriptivos y ahora, nos toca pegarnos y descubrir qué narices hace este código,
+     *para poder usarlo en nuestro proyecto.
+     *
+     *
+     *Se pide:
+     *
+     *1) Adivinar la funcionalidad del método adivinaQueHace
+     *2) Una vez descubierto, aplicar un nombre apropiado al método
+     *3) Idear un método equivalente, pero distinto. Es decir, crear un método
+     *que haga lo mismo que adivinaQueHace, pero de otra manera.
+     *4) EXTRA: Sólo si resolviste los puntos anteriores, implementa una versión recursiva
+    -->
+    <script language="javascript">
+        function comprobarPalindromo() {
+            var es_palin = true;
+            var cad = document.getElementById("palabra").value;
+            var i = 0;
+            var j = cad.length - 1;
+
+            while ((i < j) && (es_palin)) {
+                if (cad.charAt(i) == cad.charAt(j)) {
+                    es_palin = true;
+                } else {
+                    es_palin = false;
+                }
+                i++;
+                j--;
+            }
+
+            console.log("es_palin = " + es_palin);
+            return es_palin;
+        }
+
+        function comprobarPalindromo2() { //Funcion que comprueba si una palabra se lee igual de izquierda a derecha que al reves.
+            let cadena = document.querySelector('#palabra2').value //Recojemos el dato del input
+            console.log(cadena);
+            let palindromo = "";
+            for (let i = cadena.length; i >= 0; i--) { //Creo un bucle que recorre la palabra de atras a adelante y lo concatena
+                palindromo = palindromo + cadena.charAt(i)
+                console.log(palindromo);
+            }
+            if (cadena === palindromo) {
+                alert('La palabra: ' + cadena + ' SI ES UN PALINDROMO');
+                return true
+            } else {
+                alert('La palabra: ' + cadena + ' NO ES UN PALINDROMO')
+                return false
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <label for="palabra">PALABRA</label>
+    <input type="text" id="palabra">
+    <button onclick="comprobarPalindromo();">Empieza</button>
+    <p id="p1"></p>
+
+    <label for="palabra">COMPROBAR PALINDROMO</label>
+    <input type="text" id="palabra2">
+    <button onclick="comprobarPalindromo2();">Empieza</button>
+
+</body>
+
+</html>

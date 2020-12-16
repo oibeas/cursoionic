@@ -31,8 +31,8 @@
             if (dniEsp == true) { //Comprueba si esta marcado com español
 
                 // crea un nuevo div 
-                // y añade contenido 
                 var newDiv = document.createElement("div");
+                // y añade contenido 
                 var newContent = document.createTextNode("Tu DNI español es: " + numeroDni + "-" + letra);
 
             } else {
@@ -43,8 +43,8 @@
                 let letraExt = letrasExt[restoExt]
                 console.log(letraExt);
                 // crea un nuevo div 
-                // y añade contenido 
                 var newDiv = document.createElement("div");
+                // y añade contenido 
                 var newContent = document.createTextNode("Tu NIE extranjero es: " + letraExt + numeroDni + "-" + letra);
             }
 
@@ -67,12 +67,12 @@
     <label for="dni">Introduzca tu numero de DNI</label>
     <input id="dni" type="number">
     <div>
-        <input type="radio" id="esp" name="drone" value="esp" checked>
+        <input type="radio" id="esp" name="nacionalidad" value="esp" checked>
         <label for="esp">Español</label>
     </div>
 
     <div>
-        <input type="radio" id="ext" name="drone" value="ext">
+        <input type="radio" id="ext" name="nacionalidad" value="ext">
         <label for="ext">Extranjero</label>
     </div>
     <input type="button" value="CALCULAR" onclick="calcularLetra()">
