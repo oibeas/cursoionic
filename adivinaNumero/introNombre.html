@@ -32,7 +32,7 @@
             let elemento_usuario = document.getElementById("user");
             console.log(elemento_usuario.value);
             if (elemento_usuario.value == "") {
-                window.alert("No puedes dejar el usuario vacion")
+                window.alert("No puedes dejar el usuario vacío")
             } else {
                 localStorage.setItem('usuarioGuardado', elemento_usuario.value)
                 window.location.href = "adivinaNumero.html"

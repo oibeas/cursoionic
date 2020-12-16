@@ -45,11 +45,26 @@
                 this.vidas = vidas;
             }
 
-            mostrarPartida() {
+            mostrarPartida() { //Este es el metodo dinamico, que hay que declarar el objeto antes de poder usarlo
                 console.log("El usuario que ha jugado es: " + this.nombre);
                 let intentos = 5 - this.vidas;
                 console.log("El numero de intentos ha sido: " + intentos);
             }
+            guardarRecord() { //Metodo para guardar un record en el localstorage
+                // let partida = new Partida(this.nombre, this.vidas)
+                // let string_partida = JSON.stringify(this); //Convertimos el objeto a cadena de texto //this se usa aqui como un objeto Partida
+                // console.log(string_partida);
+
+                let arrRecords = []; //Primero creo el array
+                if (localStorage.getItem('recordsGuardados')) { //Compruebo si existe
+                    arrRecords = JSON.parse(localStorage.getItem('recordsGuardados')); //Leo los records del localstorage
+                    // console.log(arrRecords);
+                }
+                arrRecords.push(this); // Añadimos el resultado de la partida "this" al array
+                console.log(arrRecords);
+                localStorage.setItem('recordsGuardados', JSON.stringify(arrRecords)); //Guardamos en localstorage
+            }
+
         }
 
         function numeroRandom(min, max) { //Funcion que genera un numero aleatorio entre un numero minimo(incluido) y uno maximo) excluido
@@ -99,19 +114,13 @@
             elemento_imagen.src = "https://franciscotorreblanca.es/wp-content/uploads/2017/02/prejuicios-marketing-falacias-francisco-torreblanca-23.jpg/icons/svg/2026/2026655.svg";
             elemento_respuesta.innerHTML = "¡¡¡¡ACIERTO!!!!!";
 
-            records = [JSON.parse(localStorage.getItem('recordsGuardados'))]; //Leemos los records
-            console.log(records);
-            let nuevoRecord = {
-                'recUsuario': usuario,
-                'recVidas': vidas,
-            }
-            records[records.length] = nuevoRecord;
-            localStorage.setItem('recordsGuardados', JSON.stringify(records));
 
             // console.log(usuario);
             // console.log(vidas);
             let partidaInfo = new Partida(usuario, vidas); //Primerp declaro el objeto Partida y le paso los parametros
             partidaInfo.mostrarPartida(); //Ahora llamo al método mostrar partida, como no devuelve nada no hace falta meterle en una variable
+
+            partidaInfo.guardarRecord(); //Llamamos al metodo guardar Partida para que lo guarde
 
 
             setTimeout(volverEmpezar, 5000);
