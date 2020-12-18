@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-18T15:23:08.816Z" agent="5.0 (Macintosh)" etag="B0nJ0LhgX5Zhb-fbWE6-" version="14.0.1" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2020-12-18T15:31:16.123Z" agent="5.0 (Macintosh)" etag="2eBPYPERAwmHiRVeJpgL" version="14.0.1" type="github" pages="2">
   <diagram id="kGgm0rc9r7dIhpRuU6s-" name="Page-1">
     <mxGraphModel dx="890" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -59,18 +59,21 @@
     </mxGraphModel>
   </diagram>
   <diagram id="RPtE21PUC1exz2yxRRUC" name="Page-2">
-    <mxGraphModel dx="1483" dy="1073" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
+    <mxGraphModel dx="2017" dy="1385" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="2339" math="0" shadow="0">
       <root>
         <mxCell id="OlMIbsiVW6oPBDrXH5Tw-0" />
         <mxCell id="OlMIbsiVW6oPBDrXH5Tw-1" parent="OlMIbsiVW6oPBDrXH5Tw-0" />
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="OlMIbsiVW6oPBDrXH5Tw-1" source="OlMIbsiVW6oPBDrXH5Tw-2" target="Dg3rrYM_9BdTxn16ebrU-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="OlMIbsiVW6oPBDrXH5Tw-2" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#314354;shape=mxgraph.azure.mobile;pointerEvents=1;fontColor=#ffffff;fillColor=#1A1A1A;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
-          <mxGeometry x="170" y="10" width="360" height="620" as="geometry" />
+          <mxGeometry x="120" y="10" width="360" height="620" as="geometry" />
         </mxCell>
         <mxCell id="Dg3rrYM_9BdTxn16ebrU-0" value="REGISTRO DE USUARIO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
-          <mxGeometry x="270" y="200" width="180" height="280" as="geometry" />
+          <mxGeometry x="220" y="200" width="180" height="280" as="geometry" />
         </mxCell>
         <mxCell id="Dg3rrYM_9BdTxn16ebrU-1" value="COVID MADRID" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
-          <mxGeometry x="250" y="100" width="210" height="70" as="geometry" />
+          <mxGeometry x="200" y="100" width="210" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Dg3rrYM_9BdTxn16ebrU-2" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=#314354;shape=mxgraph.azure.mobile;pointerEvents=1;fontColor=#ffffff;fillColor=#1A1A1A;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
           <mxGeometry x="560" y="10" width="360" height="620" as="geometry" />
@@ -112,6 +115,14 @@
         <mxCell id="vF9qlU6d9cuq_KfEYlHT-5" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/top-search-7/128/_building_company_city_house_officel_apartment_architecture-128.png;fillColor=#1A1A1A;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
           <mxGeometry x="624" y="235" width="40" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="OlMIbsiVW6oPBDrXH5Tw-1" source="WMNX2dSmcCLl2vi14n8p-0" target="A7gMZSgCBsvUfOYuVYUs-70">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="400" />
+              <mxPoint x="980" y="1030" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="WMNX2dSmcCLl2vi14n8p-0" value="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Informacion zonas limitrofes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
           <mxGeometry x="620" y="375" width="240" height="50" as="geometry" />
         </mxCell>
@@ -119,7 +130,17 @@
           <mxGeometry x="623" y="380" width="40" height="40" as="geometry" />
         </mxCell>
         <mxCell id="PlJTemI5i-ZxrVOnQvcI-1" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/azure_stack/User_Subscriptions.svg;fillColor=#1A1A1A;" parent="OlMIbsiVW6oPBDrXH5Tw-1" vertex="1">
-          <mxGeometry x="321" y="380" width="68" height="66" as="geometry" />
+          <mxGeometry x="271" y="380" width="68" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;strokeWidth=2;" edge="1" parent="OlMIbsiVW6oPBDrXH5Tw-1" source="A7gMZSgCBsvUfOYuVYUs-0" target="A7gMZSgCBsvUfOYuVYUs-77">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="473" />
+              <mxPoint x="960" y="680" />
+              <mxPoint x="550" y="680" />
+              <mxPoint x="550" y="1030" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-0" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp; Mapa zonas Madrid" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;gradientColor=#ffd966;strokeColor=#d6b656;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
           <mxGeometry x="620" y="448" width="240" height="50" as="geometry" />
@@ -149,7 +170,7 @@
           <mxGeometry x="1430" y="103" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-50" value="" style="html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;verticalAlign=top;fillColor=#3B8DF1;shape=mxgraph.gcp2.view_list" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
-          <mxGeometry x="1220" y="210" width="230.85" height="285" as="geometry" />
+          <mxGeometry x="1249.05" y="191" width="170.1" height="210" as="geometry" />
         </mxCell>
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-51" value="&lt;font style=&quot;font-size: 17px&quot;&gt;&lt;b&gt;Datos por municipio&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
           <mxGeometry x="1240" y="160" width="180" height="30" as="geometry" />
@@ -184,9 +205,6 @@
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-63" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.user;fillColor=#1A1A1A;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
           <mxGeometry x="1900" y="458" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="A7gMZSgCBsvUfOYuVYUs-64" value="" style="html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;verticalAlign=top;fillColor=#3B8DF1;shape=mxgraph.gcp2.view_list" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
-          <mxGeometry x="1690" y="565" width="230.85" height="285" as="geometry" />
-        </mxCell>
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-65" value="&lt;font style=&quot;font-size: 17px&quot;&gt;&lt;b&gt;Datos por zbs&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
           <mxGeometry x="1710" y="515" width="180" height="30" as="geometry" />
         </mxCell>
@@ -219,6 +237,21 @@
         </mxCell>
         <mxCell id="A7gMZSgCBsvUfOYuVYUs-83" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px&quot;&gt;Mapa zonas Madrid&lt;/font&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
           <mxGeometry x="210" y="860" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-87" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.misc.map;fillColor=#1A1A1A;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
+          <mxGeometry x="190" y="915" width="250" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-88" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios.iBgMap;strokeColor=#18211b;strokeColor2=#008cff;fillColor2=#96D1FF;fillColor=#1A1A1A;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
+          <mxGeometry x="683" y="915" width="175" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-91" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/infographic-bar-vol-9-1/512/2-128.png;strokeColor=#1A1A1A;fillColor=#1A1A1A;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
+          <mxGeometry x="1270.1" y="400" width="128" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-96" value="" style="html=1;aspect=fixed;strokeColor=none;shadow=0;align=center;verticalAlign=top;fillColor=#3B8DF1;shape=mxgraph.gcp2.view_list" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
+          <mxGeometry x="1724.95" y="545" width="170.1" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="A7gMZSgCBsvUfOYuVYUs-97" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/infographic-bar-vol-9-1/512/2-128.png;strokeColor=#1A1A1A;fillColor=#1A1A1A;" vertex="1" parent="OlMIbsiVW6oPBDrXH5Tw-1">
+          <mxGeometry x="1746" y="754" width="128" height="128" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
