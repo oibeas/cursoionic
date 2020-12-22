@@ -21,7 +21,8 @@
 
     <script>
         // const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerDni?dni=";
-        const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerInfoDni?dni=";
+        // const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerInfoDni?dni=";
+        const URL_LETRA_DNI = "https://my-json-server.typicode.com/oibeas/cursoionic/infopersona/"
 
         //TODO VALIDAR LA ENTRADA
         var xhr = new XMLHttpRequest();
@@ -30,7 +31,7 @@
             let url_completa = '';
 
             console.log("DNI nacional sin letra");
-            url_completa = URL_LETRA_DNI + numero;
+            url_completa = URL_LETRA_DNI;
 
             return url_completa;
         }
@@ -69,8 +70,8 @@
                         // console.log(respu.letra);
                     document.getElementById("nombre").innerHTML = respu.nombre;
                     document.getElementById("apellidos").innerHTML = respu.apellidos;
-                    document.getElementById("numero").innerHTML = respu.dni.numero;
-                    document.getElementById("letra").innerHTML = respu.dni.letra;
+                    document.getElementById("numero").innerHTML = respu.dni[0].numero;
+                    document.getElementById("letra").innerHTML = respu.dni[0].letra;
                     document.getElementById("mensaje").innerHTML = respu.mensaje;
 
                 } else if (xhr.status == 204) {
