@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Itunes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        const URL_BUSCAR = "https://itunes.apple.com/search?media=music&term="; //URL donde buscar
+
+        //TODO VALIDAR LA ENTRADA
+        let xhr = new XMLHttpRequest();
+
+        function buscar() {
+            let artista = document.getElementById("buscar").value;
+            console.log(artista);
+            let url_completa = URL_BUSCAR + artista;
+            console.log(url_completa);
+            xhr.open("GET", url_completa); // Preparo la peticion
+            xhr.onreadystatechange = recibirArtista; //Programo el listener (no se ejecuta, no lleva parentesis)
+            xhr.send(); // Se envia la peticion
+
+        }
+
+        function recibirArtista() {
+            console.log("RECIBIDO");
+
+            if (xhr.readyState == 4) { //Cuando me devuelva un codigo 4 la peticion se ha devuelto al cliente
+                console.log("respuesta rx");
+                if (xhr.status == 200) { //La peticion ha ido OK
+                    console.log("respuesta OK");
+                    let datos = xhr.responseText; //Aqui viene la respuesta
+                    console.log("datos = " + datos);
+                    let datosArtista = JSON.parse(datos)
+                        // console.log(datosArtista.results[0]);
+                    let artistas = datosArtista.results;
+                    console.log(artistas);
+
+                    let infoArtista = document.getElementById("info");
+
+
+                    for (const artista of artistas) {
+                        // console.log(i);
+                        console.log(artista.artistName);
+                        infoArtista.innertHTML += `<div class="card mb-3" style="max-width: 540px;">
+                                                        <div class="row g-0">
+                                                        <div class="col-md-4">
+                                                        <img src="..." alt="...">
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">${artista.artistName}</h5>
+                                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>`
+
+
+
+                    }
+
+
+
+
+                } else {
+                    console.log("COd respuesta " + xhr.status);
+                }
+            }
+        }
+    </script>
+</head>
+
+
+
+<body>
+    <fieldset style="width:400px">
+        <legend>API Itunes</legend>
+        <label>Introduce un artista a buscar</label><br />
+        <input type="text" id="buscar" /><br />
+        <input onclick="buscar()" type="button" id="busqueda" value="ARTISTA" /><br />
+    </fieldset>
+    <div id="info">
+
+    </div>
+</body>
+
+</html>
