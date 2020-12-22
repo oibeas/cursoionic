@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Records</title>
+
+    <!-- <script src="adivina.js"></script> -->
+</head>
+
+<body>
+    <div class="container pt-5">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" id="nombre"><input type="button" value="NOMBRE" class="btn-dark" onclick="ordenarNombre()"></th>
+                    <th scope="col" id="vidas"><input type="button" value="VIDAS" class="btn-dark" onclick="ordenarVidas()"></th>
+
+                </tr>
+            </thead>
+            <tbody id="la_tabla">
+                <!-- <tr>
+                    <td scope="row">1</td>
+                    <td id="nombre">Mark</td>
+                    <td id="vidas">Otto</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <a href="file:///Users/tardes/alumno/adivinaNumero/adivinaNumero.html" class="d-flex justify-content-center"><button type="button" class="btn btn-primary">VOLVER</button></a>
+    </div>
+
+    <script>
+        function addFila(nIndice, nNombre, nVidas) { //Funcion para añadir una fila con sus datos
+            document.getElementById("la_tabla").insertRow(-1).innerHTML = '<td>' + nIndice + '</td><td>' + nNombre + '</td><td>' + nVidas + '</td>';
+        }
+
+        function mostarRecords() { //Funcion que muestra los records en la tabla
+            let i = 1;
+            for (record of arrRecords) { //Recorro el array
+                addFila(i, record.nombre, record.vidas) //Paso los datos por la funcion aañadir fila
+                i++;
+            }
+        }
+
+        function ordenarNombre() { //Funcion que ordena por nombre ascendente o descendente
+            limpiarTabla();
+            let arrOrdenado = [];
+            if (ordenNombre == "ascendente") {
+                arrOrdenado = arrRecords.sort(function(a, b) {
+                    return (a.nombre > b.nombre)
+                });
+                ordenNombre = "descendente";
+            } else {
+                arrOrdenado = arrRecords.sort(function(a, b) {
+                    return (a.nombre < b.nombre)
+                });
+                ordenNombre = "ascendente"
+            }
+            console.log(arrOrdenado);
+            mostarRecords();
+        }
+
+        function ordenarVidas() { //Funcion que ordena por vidas ascendente o descendente
+            limpiarTabla();
+            let arrOrdenado = [];
+            if (ordenVidas == "ascendente") {
+                arrOrdenado = arrRecords.sort(function(a, b) {
+                    return (b.vidas - a.vidas)
+                });
+                ordenVidas = "descendente";
+            } else {
+                arrOrdenado = arrRecords.sort(function(a, b) {
+                    return (a.vidas - b.vidas)
+                });
+                ordenVidas = "ascendente";
+            }
+            console.log(arrOrdenado);
+            mostarRecords();
+        }
+
+        function limpiarTabla() { // Funcion para limpiar la tabla
+            for (record of arrRecords) { //Recorro el array
+                document.getElementById("la_tabla").deleteRow(0);
+            }
+        }
+
+
+        let ordenNombre = "ascendente"; //Esta variable es para definir el orden por nombre
+        let ordenVidas = "ascendente"; //Esta variable es para definir el orden por vidas
+        let arrRecords = [];
+        arrRecords = JSON.parse(localStorage.getItem('recordsGuardados')); //Leo los records del localstorage
+        if (arrRecords) { //Compruebo si existen registros
+            mostarRecords();
+        } else { //Si no hay registros aviso
+            window.alert("No hay registros");
+        }
+    </script>
+
+</body>
+
+</html>

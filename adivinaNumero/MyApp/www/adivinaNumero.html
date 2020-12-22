@@ -1,0 +1,64 @@
+<!-- Consiste en generar un numero aleatoro entre 1 y 100, el usuario tiene 5 oportunidades para divinarlo, cuando falle le dirá si es mayor o menor, y cuando se le acaben las vidas el programa devolverá la solución -->
+
+<!-- 1º Maquetar la pagina -->
+<!-- 2º Generar un numero -->
+<!-- 3º Recoger el dato introducido y compararlo con la solucion -->
+<!-- Si es correcto GIF aplausos -->
+<!-- Si es incorrecto GIF fallo, devolver mayor o menor y restar una vida -->
+<!-- Si se acaban las vidas GIF fin y devolver la solucion -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el numero</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="adivina.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="titulo">
+            <h1>JUEGO: Adivina el numero</h1>
+        </div>
+        <div class="vidas">
+            <h1>Vidas: <span id="vidas"></span></h1>
+        </div>
+    </div>
+    <div class="usuario">
+        <p>Nombre de usuario:&nbsp; </p>
+        <b><p id="user"></p></b>
+        <input type="button" class="boton" value="modificar" id="modificar" onclick="modificarUsuario()" style="margin-left: 10px;">
+    </div>
+
+    <div class="respuesta">
+        <label for="respuesta">Introduzca un numero entre 1 y 100:&nbsp;</label>
+        <input name="respuesta" id="respuesta" type="number">&nbsp;
+        <input type="button" class="boton" value="ADIVINAR" onclick="calcularRespuesta()">
+    </div>
+
+    <div class="imagen">
+        <img src="https://programacionsiemens.com/wp-content/uploads/2013/05/error.jpg" id="imagen">
+        <h1 id="texto_respuesta"></h1>
+    </div>
+    <div class="reinicio">
+        <input type="button" id="reiniciar" value="REINICIAR" onclick="volverEmpezar()">
+        <input type="button" id="records" value="MOSTRAR RECORDS" onclick="verRecords()">
+    </div>
+    <div class="cuadroRespuestas">
+        <div class="ultimasRespuestas">
+            <ul id="ultimas"></ul>
+        </div>
+        <div class="ultimasRespuestas2">
+            <ul id="ultimas2"></ul>
+        </div>
+    </div>
+
+</body>
+
+</html>

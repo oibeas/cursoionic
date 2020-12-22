@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CALCULA LETRA DNI</title>
+    <meta charset="UTF-8">
+    <style>
+        label {
+            color: rgb(62, 118, 201);
+        }
+        
+        #nombre,
+        #apellidos,
+        #numero,
+        #letra,
+        #mensaje {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+
+    <script>
+        // const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerDni?dni=";
+        const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerInfoDni?dni=";
+
+        //TODO VALIDAR LA ENTRADA
+        var xhr = new XMLHttpRequest();
+
+        function calcularURL(numero) {
+            let url_completa = '';
+
+            console.log("DNI nacional sin letra");
+            url_completa = URL_LETRA_DNI + numero;
+
+            return url_completa;
+        }
+
+        function calcular() {
+            //todo calcular la letra del dni introducido
+            //http://www.interior.gob.es/web/servicios-al-ciudadano/dni/calculo-del-digito-de-control-del-nif-nie
+            //1 OBTENER EL NÚMERO DEL DNI INTRODUCIDO
+            let numero = document.getElementById("txtDNI").value;
+
+            const regex = /^[0-9]{7,8}$/; //Validador, que sean numero de 7 u 8 caracter
+
+            if (regex.exec(numero) !== null) {
+                console.log("DNI válido");
+                //LLAMAR AL SERVIDOR, CON ESE NÚMERO
+                let url = calcularURL(numero);
+                console.log("URL = " + url);
+                xhr.open("GET", url); // Preparo la peticion
+                xhr.onreadystatechange = recibirLetra; //Programo el listener (no se ejecuta, no lleva parentesis)
+                xhr.send(); // Se envia la peticion
+            } else {
+                console.log("DNI no válido");
+                window.alert("Numero de DNI incorrecto, debe ser numérico y de 8 caracteres")
+            }
+
+        }
+
+        function recibirLetra() {
+            if (xhr.readyState == 4) { //Cuando me devuelva un codigo 4 la peticion se ha devuelto al cliente
+                console.log("respuesta rx");
+                if (xhr.status == 200) { //La peticion ha ido OK
+                    console.log("respuesta OK");
+                    let letra_rx = xhr.responseText; //Aqui viene la respuesta
+                    console.log("letra rx = " + letra_rx);
+                    let respu = JSON.parse(letra_rx)
+                        // console.log(respu.letra);
+                    document.getElementById("nombre").innerHTML = respu.nombre;
+                    document.getElementById("apellidos").innerHTML = respu.apellidos;
+                    document.getElementById("numero").innerHTML = respu.dni.numero;
+                    document.getElementById("letra").innerHTML = respu.dni.letra;
+                    document.getElementById("mensaje").innerHTML = respu.mensaje;
+
+                } else if (xhr.status == 204) {
+                    console.log("El Dni no esta en la base de datos");
+                    document.getElementById("nombre").innerHTML = "EL USUARIO NO ESTA EN LA BASE DE DATOS";
+                    document.getElementById("apellidos").innerHTML = "";
+                    document.getElementById("numero").innerHTML = "";
+                    document.getElementById("letra").innerHTML = "";
+                    document.getElementById("mensaje").innerHTML = "";
+                } else {
+                    console.log("COd respuesta " + xhr.status);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset style="width:400px">
+        <legend>CALCULADORA LETRA DNI</legend>
+        <label>Introduce tu DNI</label><br />
+        <input type="text" id="txtDNI" /><br />
+        <input onclick="calcular()" type="button" id="btnResultado" value="CALCULAR LETRA" /><br />
+        <label>LETRA</label><br />
+        <input type="text" id="txtLetra" /><br><br>
+    </fieldset>
+    <fieldset style="width:500px">
+        <legend>DATOS USUARIO</legend>
+        <label>Nombre:</label>
+        <label id="nombre"></label><br/>
+        <label>Apellidos:</label>
+        <label id="apellidos"></label><br/>
+        <label>Numero DNI:</label>
+        <label id="numero"></label><br/>
+        <label>Letra DNI:</label>
+        <label id="letra"></label><br/>
+        <label>Observaciones:</label>
+        <label id="mensaje"></label><br/>
+    </fieldset>
+</body>
+
+</html>

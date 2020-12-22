@@ -1,9 +1,11 @@
 {
-    "dni": [{
-        "numero": "71234567",
-        "letra": "H"
-    }],
-    "nombre": "Ramon",
-    "apellidos": "Garcia Gonzalez",
-    "mensaje": "Te ha tocado el gordo!!!"
+    "infopersona": {
+        "dni": [{
+            "numero": "71234567",
+            "letra": "H"
+        }],
+        "nombre": "Ramon",
+        "apellidos": "Garcia Gonzalez",
+        "mensaje": "Te ha tocado el gordo!!!"
+    }
 }
