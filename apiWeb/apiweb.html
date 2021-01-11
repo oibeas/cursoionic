@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Api Itunes</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 
@@ -52,7 +53,7 @@
                     let datos = xhr.responseText; //Aqui viene la respuesta
                     console.log("datos = " + datos);
                     let datosArtista = JSON.parse(datos)
-                        // console.log(datosArtista.results[0]);
+                    // console.log(datosArtista.results[0]);
                     let artistas = datosArtista.results;
                     console.log(artistas);
 
@@ -60,24 +61,31 @@
                     // let infoNombreArtista = document.getElementById("nombreArtista");
 
                     // console.log(artist);
+                    let i = 0;
                     for (const artist of artistas) {
+                        i++;
                         // console.log(i);
                         console.log(artist.artistName);
-                        infoArtista.innerHTML += `<div class="card mb-3">
+                        infoArtista.innerHTML += `<div class="card mb-3 col-md-6">
                                                         <div class="row g-0">
-                                                        <div class="col-md-4">
-                                                            <img src="${artist.artworkUrl100}" alt="${artist.trackName}" style="width: 150px;">
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="card-body">
-                                                            <h5 class="card-title">${artist.trackName}</h5>
-                                                            <p class="card-text">Album: ${artist.collectionName}</p>
-                                                            <a href="${artist.previewUrl}" class="btn btn-primary">Play</a>
+                                                            <div class="col-md-4">
+                                                                <img src="${artist.artworkUrl100}" alt="${artist.trackName}" style="width: 150px;">
                                                             </div>
-                                                        </div>
+                                                            <div class="col-md-8">
+                                                                <div class="card-body">
+                                                                <h5 class="card-title">${artist.trackName}</h5>
+                                                                <p class="card-text">Album: ${artist.collectionName}</p>
+                                                                
+                                                                <audio controls autostart="0" preload="none">
+                                                                    <source src="${artist.previewUrl}" type="audio/wav" />
+                                                                    Your browser does not support the audio element.
+                                                                </audio>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>`;
                         // infoNombreArtista.innerHTML += artist.artistName;
+                        if (i > 30) { break };
                     }
 
                 } else {
